@@ -1,0 +1,298 @@
+/* This CSS rule targets the pseudo-element '::before' of the 'body' element */
+
+body::before {
+    /* Display the pseudo-element as a block-level element */
+    display: block;
+    
+    /* Add an empty content */
+    content: '';
+
+    /* Set the height of the pseudo-element to 60 pixels */
+    height: 60px;
+}
+
+/* header background */
+.bg-dark {
+    background-color: #ffffff!important;
+    box-shadow: 0px 1px 5px black;
+}
+
+/* footer background */
+.bg-dark-footer {
+    background-color: #146C94!important;
+    box-shadow: 0px 3px 10px black;
+}
+
+/* color for footer content */
+.navbar-dark .navbar-brand {
+    color: #146C94;
+}
+
+
+/* color for website name */
+.text-white {
+    color: #ffffff!important;
+}
+
+/* color for header content */
+.navbar-dark .navbar-nav .nav-link {
+    color: #19A7CE;
+}
+
+/* background color for Social Media bar */
+.bg-primary {
+    background-color: #19A7CE!important;
+}
+
+/* color for hover button in footer to go to the top page */
+a:hover {
+    color: #19A7CE;
+}
+
+/* color for button in footer to go to the top page */
+a {
+    color: #4b4fcd;
+    text-decoration: underline;
+}
+
+/* color for body text */
+.text-light {
+    color: #3f3f3f!important;
+}
+
+/* color for some body text */
+.text-warning {
+    color: #146C94!important;
+}
+
+/* color for bottun */
+/* .btn-dark {
+    color: #fff;
+    background-color: #146C94;
+    border-color: #146C94;
+    /* border-radius: 50px; */
+/* } */ 
+
+/* logo */
+.w-50-logo {
+    /* width: 50%!important; */
+    width: 70px;
+    height: 70px;
+}
+
+/* padding of header */
+.py-3 {
+    padding-top: 0.1rem!important;
+    padding-bottom: 0.1rem!important;
+}
+
+/* size of shutter gif in home */
+img.img-fluid.w-50-shutter.d-none.d-sm-block {
+    width: 50px;
+    height: 50px;
+}
+
+/* div for Learn how to use Attendance Tracker in home */
+.Learn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Learn2 {
+    display: flex;
+    justify-content: space-evenly;
+}
+/* padding Learn how to use Attendance Tracker in home */
+h2.mb-10 {
+    padding-right: 10px;
+}
+/* mission in about us */
+.Mission {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bg-img {
+background-image: url("bg.PNG");
+}
+
+.img-fluid-logo {
+    width: 300px;
+    height: auto;
+    /* padding: 5px; */
+    margin-bottom: 50px;
+}
+/* .........*/
+.navbar-dark .navbar-nav .nav-link:hover {
+    font-weight: bold;
+    color: #19A7CE;
+    text-decoration: none;
+}
+/* texts */
+p.lead.my-4 {
+    font-size: 19px;
+    margin-bottom: 10px;
+    color: black;
+}
+/* cards in home */
+.card-header {
+    background-color: #146C94;
+    color: white;
+    font-weight: bold;
+}
+
+/* Why do you need Attendance Tracker home */
+h2.mb-10 {
+    padding-right: 10px;
+    padding-top: 5px;
+}
+.d1 {
+    margin-bottom: 40px;
+}
+
+a.nav-link {
+    font-size: 17px;
+}
+.btn-dark {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #19a7ce;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.btn-dark:hover {
+    background-color: #12869e;
+}
+/* .........*/
+
+
+.card {
+    transition: 0.7s ease;
+    box-shadow: 0 5px 15px rgba(1 1 1/ 15);
+    border-radius: 5px;
+    margin: 5px;
+
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.lesson {
+    box-shadow: 0 5px 15px rgba(200 200 200/ 15);
+    border-radius: 5px;
+    border: 1px solid #fff;
+
+}
+
+.post:hover {
+    /* transform: scale(1.1); */
+    opacity: 0.9;
+}
+
+.button_width {
+    min-width: 120px;
+    max-width: 120px;
+}
+
+.article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 8px;
+}
+
+.user-img {
+    height: 150px;
+    width: 150px;
+    margin-right: 8px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.nobull {
+    list-style-type: none;
+}
+
+.arabic-sc {
+    font-family: 'Rakkas', cursive;
+}
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.bg-dark-footer {
+    background-color: #146C94!important;
+    padding: 30px 0;
+}
+
+.text-white {
+    color: #ffffff!important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-link {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #19A7CE;
+}
+
+
+.font-weight-bold {
+    font-weight: bold;
+}
+
+.back-to-top {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    animation: fade-in 0.5s ease forwards;
+}
+
+.back-to-top:hover {
+    color: #19A7CE;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+}}

@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    input#submit {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #19a7ce;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    input#submit:hover {
+        background-color: #12869e;
+    }
+
+    .container.my-5.border {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+    }
+
+    legend.border-bottom.mb-4 {
+        background-color: #19A7CE;
+        color: white;
+        padding: 8px;
+        border-start-start-radius: 5px;
+        border-top-right-radius: 5px;
+
+    }
+
+    .container.my-5.border {
+        /* padding-left: 4px; */
+        padding: 0px;
+        border-radius: 5px;
+    }
+
+    .form-group1 {
+        padding: 8px;
+    }
+
+    small.text-muted {
+        display: flex;
+        justify-content: center;
+    }
+
+.ab {
+    display: flex;
+    justify-content: space-between;
+}
+
+    img.img-fluid.w-50-l.d-none.d-sm-block {
+        width: 700px;
+        height: 500px;
+    }
+
+    p.TakeControl {
+        margin-left: 750px;
+        font-size: 18px;
+        justify-content: center;
+    }
+
+    /* Added CSS rule */
+    .container.my-5.border form .form-group.my-3 .btn {
+        width: 100%;
+    }
+
+    .or {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        color: gray;
+    }
+    .bar {
+        flex-grow: 1;
+        height: 1px;
+        background-color: #000;
+        margin: 0 10px;
+    }
+    a.btn.btn-outline-info {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #146C94;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+a.btn.btn-outline-info:hover {
+    background-color: #12869e;
+}
+
+
+</style>
+<div class="ab">
+    <div class="container my-5 border">
+        <form action="" method="POST">
+            {{ form.hidden_tag()}}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4"><strong> Login</strong></legend>
+                <div class="form-group1">
+                    <div class="form-group">
+                        {{ form.email.label(class='form-control-label')}}
+                        {% if form.email.errors%}
+                        {{ form.email(class='form-control form-control-lg is-invalid')}}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                            <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.email(class='form-control form-control-lg')}}
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.password.label(class='form-control-label')}}
+                        {% if form.password.errors%}
+                        {{ form.password(class='form-control form-control-lg is-invalid')}}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                            <span>{{error}}</span>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        {{ form.password(class='form-control form-control-lg')}}
+                        {% endif %}
+                    </div>
+                    <div class="form-check">
+                        {{form.remember(class='form-check-input')}}
+                        {{form.remember.label(class='form-check-input-label')}}
+                    </div>
+
+                    <div class="form-group my-3">
+                        {{ form.submit(class='btn btn-outline-info')}}
+                    </div>
+            </fieldset>
+        </form>
+        <small class="text-muted ml-2">
+            <a href="#">Forgot Password?</a>
+        </small>
+        <div class="or">
+            <hr class="bar" />
+            <span>OR</span>
+            <hr class="bar" />
+        </div>
+        <a class="ml-2 btn btn-outline-info" href="{{url_for('register')}}">Create Account</a>
+    </div>
+    <img class="img-fluid w-50-l d-none d-sm-block" src="{{url_for('static', filename='time-and-attendance.png')}}"
+        alt="">
+</div>
+<!-- <p class="TakeControl"><strong>Control of Attendance Management with Our Powerful Solution</strong></p> -->
+{% endblock content %}

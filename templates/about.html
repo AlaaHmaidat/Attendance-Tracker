@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- ABOUT US -->
+<section class="bg-light text-dark p-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="display-4">About Us</h2>
+                <p class="lead my-4">Attendance Tracker is a leading provider of attendance management solutions for
+                    businesses and educational institutions.</p>
+                <p class="lead my-4">With Attendance Tracker, you can automate attendance tracking, ensure accurate
+                    records, and
+                    streamline workflows. Our user-friendly interface and advanced features make it easy for
+                    organizations of all sizes to manage attendance effectively.</p>
+                <p class="lead my-4">At Attendance Tracker, we prioritize data privacy and security. We implement robust
+                    security measures
+                    to safeguard your attendance records and ensure compliance with data protection regulations.</p>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-fluid" src="{{url_for('static', filename='FaceScanne.gif')}}" alt="About Us Image">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="Mission">
+    <img class="img-fluid-logo" src="{{url_for('static', filename='logo.png')}}" alt="About Us Image">
+
+        
+        <p class="lead my-4">
+            <strong>Mission:</strong>
+            <br>
+            Simplify attendance management and optimize resource allocation for businesses and
+            educational institutions.
+            <br>
+            <br>
+            <strong>Vision:</strong>
+            <br>
+            Become a global leader in attendance tracking solutions, setting new industry standards through
+            innovation and security measures.
+        </p>
+
+</div>
+
+{% endblock content%}

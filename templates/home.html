@@ -1,0 +1,183 @@
+{%extends "layout.html"%}
+{% block content %}
+<!-- HOME -->
+<section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div class="d1">
+                <h1 class="mb-10"> Attendance <span class="text-warning"> Tracker </span></h1>
+                <p class="lead my-4">
+                    Effortless Attendance Management for Modern Organizations and Educational Institutions
+                </p>
+                <p class="lead my-4">
+                    Spend less time on attendance administration and focus on what truly matters - whether it's managing
+                    your business or facilitating online lectures for colleges. Attendance Tracker (AT) offers a
+                    cutting-edge attendance tracking solution designed to streamline your processes and simplify
+                    attendance management. </p>
+
+                <!-- <button type="button" class="btn btn-dark">Register Now</button> -->
+                <a href="{{ url_for('register') }}" class="btn btn-dark">Try It Now</a>
+
+            </div>
+            <img class="img-fluid w-50 d-none d-sm-block" src="{{url_for('static', filename='fa3.gif')}}" alt="">
+        </div>
+    </div>
+</section>
+<!-- Social Media -->
+<!-- <section class="bg-primary text-light p-5">
+    <div class="container">
+        <div class="d-md-flex justify-content-between align-items-center">
+            <h3 class="mb-3 text-center">Join Our Community</h3>
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <button class="navbar-toggler border" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#socialbtn">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="socialbtn">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="btn btn-dark ms-5 button_width" href="#"
+                                target="_blank">
+                                <i class="bi-github" role="img"></i>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn btn-dark ms-5 button_width" href="#"
+                                target="_blank">
+                                <i class="bi bi-facebook "></i>
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a type="button" class="btn btn-dark ms-5 button_width"
+                                href="#" target="_blank">
+                                <i class="bi bi-instagram"></i>
+                                Instagram
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-dark ms-5 button_width" href="#"
+                                target="_blank">
+                                <i class="bi bi-twitter"></i>
+                                Twitter
+                            </a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-dark ms-5 button_width" href="#"
+                                target="_blank">
+                                <i class="bi bi-tiktok"></i>
+                                TikTok
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </div>
+    </div>
+</section> -->
+<!-- Why do you need Attendance Tracker cards -->
+<section class="text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <div class="Learn">
+                    <div class="Learn2">
+                        <img class="img-fluid w-50-shutter d-none d-sm-block"
+                                src="{{url_for('static', filename='shutter.gif')}}" alt=""> 
+
+                                <h2 class="mb-10"> 
+                                    Why do you need Attendance Tracker? </h1>
+                    </div>
+                </div>
+
+                <div>
+                    <section>
+                        <div class="container p-5">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card bg-light mb-3 flex-fill">
+                                        <div class="card-header"><i class="bi bi-clock"></i> Simplify Attendance
+                                            Management</div>
+                                        <div class="card-body">
+                                            <p class="card-text">Attendance Tracker simplifies the process, automating
+                                                attendance tracking and reducing administrative tasks</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card bg-light mb-3 flex-fill">
+                                        <div class="card-header"><i class="bi bi-check2-all"></i> Ensure Accuracy</div>
+                                        <div class="card-body">
+                                            <p class="card-text">Attendance Tracker provides accurate and real-time
+                                                attendance records, minimizing errors</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card bg-light mb-3 flex-fill">
+                                        <div class="card-header"><i class="bi bi-arrow-up-right-circle"></i> Streamline
+                                            Workflow</div>
+                                        <div class="card-body">
+                                            <p class="card-text">By automating attendance management, Attendance Tracker
+                                                streamlines workflows and saves time</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card bg-light mb-3 flex-fill">
+                                        <div class="card-header"><i class="bi bi-pie-chart"></i> Optimize Resource
+                                            Allocation</div>
+                                        <div class="card-body">
+                                            <p class="card-text">Attendance Tracker helps optimize resource allocation
+                                                by providing insights into attendance patterns</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card bg-light mb-3 flex-fill">
+                                        <div class="card-header"><i class="bi bi-shield-lock"></i> Maintain Data Privacy
+                                            and Security</div>
+                                        <div class="card-body">
+                                            <p class="card-text">Attendance Tracker prioritizes data privacy and
+                                                implements strong security measures</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12 col-md-6 col-lg-4 d-flex">
+                                    <div class="card bg-light mb-3 flex-fill">
+                                        <div class="card-header"><i class="bi bi-list-check"></i> Meet Compliance
+                                            Requirements</div>
+                                        <div class="card-body">
+                                            <p class="card-text">Attendance Tracker ensures compliance by providing
+                                                detailed attendance records and documentation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- {% if title %}
+<title>Document - {{title}}</title>
+{% else %}
+<title>Document</title>
+{% endif %} -->
+
+{% endblock content%}

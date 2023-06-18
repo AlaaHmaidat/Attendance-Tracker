@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    {% if title %}
+    <title>Attendance Tracker - {{title}}</title>
+    {% else %}
+    <title>Attendance Tracker</title>
+    {% endif %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
+        <div class="container">
+            
+            <a href="home" class="navbar-brand"><img class="img-fluid w-50-logo d-none d-sm-block" src="{{url_for('static', filename='logo.png')}}" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav" style="flex-direction: row;">
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Attendance" class="nav-link">Attendance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Price" class="nav-link">Prices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about" class="nav-link">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Contact" class="nav-link">Contact us</a>
+                    </li>
+                </ul>
+                <!-- User Links -->
+                {% if current_user.is_authenticated %}
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+                {% else %}
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="{{ url_for('login') }}" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a href="{{ url_for('register') }}" class="nav-link"><i class="bi bi-person-plus"></i> Register</a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a href="#dashboard" class="nav-link">Dashboard</a>
+                    </li> -->
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{category}} text-center" style="margin-top: 1rem;">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block content%} {% endblock %}
+
+    
+    <!-- footer -->
+
+    <footer class="bg-dark-footer mt-auto">
+        <div class="container p-3">
+            <div class="row text-center text-white">
+                <div class="col-md-4 pb-2">
+                    <h4 class="text-center text-decoration-underline">Quick Links</h4>
+                    <ul class="nobull pt-3">
+                        <li><a href="#" class="link text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="link text-white">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="text-center text-decoration-underline pb-3">Social Links</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="bi bi-github"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 pb-2">
+                    <h4 class="text-center text-decoration-underline pb-3">Contact Us</h4>
+                    <p class="lead">at2023@tracker.com</p>
+                </div>
+            </div>
+            <div class="row text-white text-center">
+                <div class="col">
+                    <p class="lead font-weight-bold">© 2023 Attendance Tracking. All rights reserved.</p>
+                    <a href="#" class="back-to-top">
+                        <i class="bi bi-arrow-up-circle h1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+/* styles.css */
+
+/* Global Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  /* Header */
+  
+  header {
+    background-color: #F6F1F1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #19A7CE;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #146C94;
+  }
+  
+  /* Add animation to header on scroll */
+  
+  header {
+    transition: background-color 0.3s ease;
+  }
+  
+  header.scrolled {
+    background-color: rgba(246, 241, 241, 0.8);
+  }
+  
+  /* Add animation to nav links */
+  
+  nav a {
+    position: relative;
+  }
+  
+  nav a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #19A7CE;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  nav a:hover:before {
+    transform: scaleX(1);
+  }
+  
+  
+  /* Hero Section */
+  
+  .hero {
+    background-color: #f9f9f9;
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  
+  /* Features Section */
+  
+  .features {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .features ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .features li {
+    width: 300px;
+    margin: 10px;
+  }
+  
+  /* Pricing Section */
+  
+  .pricing {
+    background-color: #f2f2f2;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .pricing h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .pricing ul {
+    margin-bottom: 30px;
+  }
+  
+  .pricing li {
+    margin-bottom: 10px;
+  }
+  
+  /* Footer */
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  .hero {
+    background-image: url('https://img.pikbest.com/backgrounds/20190831/electronic-technology-intelligent-face-recognition-background_1902489.jpg!bwr800');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 150px 0;
+    color: #fff;
+    position: relative;
+  }
+  
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.393), rgba(0, 0, 0, 0.402)), url('https://img.freepik.com/free-photo/facial-recognition-collage-concept_23-2150038886.jpg?w=1060&t=st=1685645558~exp=1685646158~hmac=d0d78af2da9574bd35f1551b679f2e685bf585f9c9380e14385a6afe9e309fbb');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding: 150px 0;
+    color: #fff;
+    position: relative;
+  }
+  
+  /* .hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  } */
+  
+  .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .hero h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+  
+  .hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #555;
+  }
+  .features {
+    text-align: center;
+    padding: 80px 0;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    width: 100%;
+  }
+  
+  .feature {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .feature-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .feature p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  

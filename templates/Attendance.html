@@ -1,0 +1,243 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+    #beenheree {
+        padding-top: 10px;
+    }
+
+    #ver {
+        color: #146c94;
+        font-size: 15px;
+        padding-top: 25px;
+        padding-left: 4px;
+    }
+
+    .checkmark {
+        margin: 0 auto;
+        padding-top: 40px;
+        display: flex;
+
+    }
+
+    svg#Layer_1 {
+        width: 75px;
+    }    /* end */
+    .alert.success {
+    display: flex;
+    justify-content: center;
+}
+
+    .attendance-card {
+        margin-top: 60px;
+        border-radius: 10px;
+        background-color: #f6f1f1;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        background-color: #19a7ce;
+        margin-bottom: 20px;
+    }
+
+    .card-header h2 {
+        font-size: 24px;
+        margin-left: 10px;
+        color: white;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        background-color: #146c94;
+        color: #f6f1f1;
+        border: none;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #ddd;
+        color: #146c94;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f6f1f1;
+        color: #146c94;
+    }
+
+    .btn-download {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        background-color: #146c94;
+        color: #f6f1f1;
+        border: none;
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .btn-download:hover {
+        background-color: #19a7ce;
+    }
+
+    .btn i {
+        margin-left: 5px;
+    }
+
+    /* Additional styles for a more beautiful design */
+
+    .add-user-form label,
+    .attendance-card h5 {
+        font-weight: bold;
+        color: #146c94;
+        margin-top: 10px;
+    }
+
+    .add-user-form input[type="text"],
+    .add-user-form input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        font-size: 16px;
+    }
+
+    .attendance-card h5 {
+        font-size: 16px;
+    }
+
+    .attendance-card table {
+        font-size: 14px;
+    }
+
+    .attendance-card table th,
+    .attendance-card table td {
+        text-align: center;
+    }
+
+    .attendance-card .btn-download {
+        margin-top: 10px;
+    }
+
+    .attendance-card .btn-download i {
+        margin-left: 5px;
+    }
+
+    .alert {
+        background-color: #F2F7FF;
+        border-radius: 5px;
+        border: 1px solid #D9E4F7;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .alert.success {
+        color: #155724;
+        background-color: #D4EDDA;
+        border-color: #C3E6CB;
+    }
+
+    .alert.error {
+        color: #721C24;
+        background-color: #F8D7DA;
+        border-color: #F5C6CB;
+    }
+</style>
+{% if ver %}
+
+<div class="alert success">
+    <i class="material-icons">check_circle</i>
+    <span>Your face has been verified successfully!</span>
+</div>
+{% endif %}
+{%if current_user.role=="student"%}
+<div class="container">
+    <div class="attendance-card">
+        <div class="card-header">
+            <h2><i class="material-icons">control_point_duplicate</i> Face Recognition</h2>
+        </div>
+        <div>
+            <form class="add-user-form" action="/add" method="POST" enctype="multipart/form-data">
+                <button type="submit" class="btn-dark">Add Face Print</button>
+                <span class="info-icon" data-toggle="tooltip" data-placement="right" title="One-time procedure">
+                    <i class="material-icons">info</i>
+                </span>
+                <!-- <h5><i>Total Users in Database: {{ totalreg }}</i></h5> -->
+            </form>
+        </div>
+        <div style="margin-top: 10px;">
+            <a class="btn-dark" href="/start"><i class="material-icons">beenhere</i> Take Attendance</a>
+        </div>
+    </div>
+
+</div>
+{%endif%}
+
+<div class="attendance-card">
+    <div class="card-header">
+        <h2>Today's Attendance <i class="material-icons">assignment</i></h2>
+    </div>
+
+
+    <table>
+        <thead>
+
+            <tr>
+                <th>S No</th>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Time</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if l %}
+            {% for i in range(l) %}
+            <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ names[i] }}</td>
+                <td>{{ rolls[i] }}</td>
+                <td>{{ times[i] }}</td>
+                <td>{{ dates[i] }}</td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+    {%if current_user.role=="instructor"%}
+    <a class="btn" href="{{ url_for('download_attendance') }}">
+        Download Attendance <i class="material-icons">cloud_download</i>
+    </a>
+
+    {%endif%}
+
+</div>
+
+
+
+
+{% endblock content%}

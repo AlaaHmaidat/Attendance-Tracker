@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+{% block content %}
+<style>
+  .contact-section {
+    padding: 80px 0;
+    background-color: #f8f8f8;
+  }
+
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+
+  .section-description {
+    font-size: 18px;
+    color: #777777;
+    margin-bottom: 40px;
+  }
+
+  .contact-form {
+    max-width: 500px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+  }
+
+  textarea.form-input {
+    height: 120px;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #146C94;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: #19A7CE;
+  }
+
+  .contact-info {
+    padding-left: 50px;
+  }
+
+  .info-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+
+  .info-description {
+    font-size: 16px;
+    color: #777777;
+    margin-bottom: 40px;
+  }
+
+  .info-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .info-list li {
+    margin-bottom: 20px;
+  }
+
+  .info-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #146C94;
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+  }
+
+  .info-text {
+    font-size: 16px;
+    color: #333333;
+  }
+
+  .team {
+    display: flex;
+    padding: 8px;
+    margin-bottom: 20px;
+  }
+  .card {
+    pointer-events: none;
+}
+h3.OurTeam {
+    text-align: center;
+    padding: 15px;
+}
+</style>
+<section class="contact-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-description">We'd love to hear from you. Fill out the form below to get in touch with us.</p>
+        <form class="contact-form">
+          <input type="text" class="form-input" placeholder="Your Name" required>
+          <input type="email" class="form-input" placeholder="Your Email" required>
+          <textarea class="form-input" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn btn-dark">Send Message</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <div class="contact-info">
+          <h3 class="info-title">Contact Information</h3>
+          <p class="info-description">Feel free to reach out to us using the contact information below.</p>
+          <ul class="info-list">
+            <li>
+              <span class="info-icon"><i class="bi bi-geo-alt"></i></span>
+              <span class="info-text">Airport Road, Marj Al Hamam Bridge
+                P.O.Box 183334, Amman 11118, Jordan</span>
+            </li>
+            <li>
+              <span class="info-icon"><i class="bi bi-envelope"></i></span>
+              <span class="info-text">info@luminuseducation.com</span>
+            </li>
+            <li>
+              <span class="info-icon"><i class="bi bi-telephone"></i></span>
+              <span class="info-text">+962 6 4000666</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<h3 class="OurTeam">Our Team</h3>
+<div class="team">
+
+  <div class="card" style="width: 18rem;">
+    <img src="../static/Ahmad.jpg" class="card-img-top rounded-circle" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Ahmed Al-Iraqi</h5>
+      <p class="card-text">React and Backend Developer</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="../static/Smadi.jpg" class="card-img-top rounded-circle" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Mohammed Al-Smadi</h5>
+      <p class="card-text">React Native Developer & Backend Developer</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="../static/shareef.jpg" class="card-img-top rounded-circle" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Mohamed Sharif Naser</h5>
+      <p class="card-text">Flask & Backend Developer</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="../static/salah.jpg" class="card-img-top rounded-circle" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Salah El-Din Hammash</h5>
+      <p class="card-text">Flask & Backend Developer</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="../static/Alaa.jpeg" class="card-img-top rounded-circle" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Alaa Hmaidat</h5>
+      <p class="card-text">Flask & Backend Developer</p>
+    </div>
+  </div>
+</div>
+
+
+</div>
+{% endblock content%}

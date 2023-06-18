@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>LTUC Attendance</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #081c3a;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .attendance-card {
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-header h2 {
+            font-size: 24px;
+            margin-left: 10px;
+            color: #081c3a;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            background-color: #081c3a;
+            color: #ffffff;
+            border: none;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0b2859;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            background-color: #081c3a;
+            color: #ffffff;
+            border: none;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            background-color: #0b2859;
+        }
+
+        .btn i {
+            margin-left: 5px;
+        }
+
+        footer {
+            background-color: #081c3a;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            color: #ffffff;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Additional styles for a more beautiful design */
+
+        .add-user-form label,
+        .attendance-card h5 {
+            font-weight: bold;
+            color: #081c3a;
+            margin-top: 10px;
+        }
+
+        .add-user-form input[type="text"],
+        .add-user-form input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .attendance-card h5 {
+            font-size: 16px;
+        }
+
+        .attendance-card table {
+            font-size: 14px;
+        }
+
+        .attendance-card table th,
+        .attendance-card table td {
+            text-align: center;
+        }
+
+        .attendance-card .btn-download {
+            margin-top: 10px;
+        }
+
+        .attendance-card .btn-download i {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>LTUC Attendance</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="attendance-card">
+            <div class="card-header">
+                <h2>Add New User <i class="material-icons">control_point_duplicate</i></h2>
+            </div>
+            <form class="add-user-form" action="/add" method="POST" enctype="multipart/form-data">
+                <label for="newusername">Enter New User Name*</label>
+                <br>
+                <input type="text" id="newusername" name="newusername" required>
+                <br>
+                <label for="newusereid">Enter New User ID*</label>
+                <br>
+                <input type="number" id="newusereid" name="newuserid" required>
+                <br>
+                <button type="submit" class="btn">Add New User</button>
+                <br>
+                <h5><i>Total Users in Database: {{ totalreg }}</i></h5>
+            </form>
+        </div>
+        <div class="attendance-card">
+            <div class="card-header">
+                <h2>Today's Attendance <i class="material-icons">assignment</i></h2>
+            </div>
+            <a class="btn" href="/start">Take Attendance <i class="material-icons">beenhere</i></a>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S No</th>
+                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if l %}
+                    {% for i in range(l) %}
+                    <tr>
+                        <td>{{ i+1 }}</td>
+                        <td>{{ names[i] }}</td>
+                        <td>{{ rolls[i] }}</td>
+                        <td>{{ times[i] }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 LTUC Attendance. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
